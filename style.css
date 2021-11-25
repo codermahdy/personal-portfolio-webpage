@@ -1,0 +1,641 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&family=PT+Sans:ital@0;1&display=swap");
+
+/* Custom properties/variables  */
+:root {
+   --main-white: #f0f0f0;
+   --main-black: #101010;
+   --main-gray: #303030;
+   --main-red: #ff0f00;
+   --main-green: #0fff00;
+   --main-blue: #000fff;
+}
+
+/* Base reset */
+* {
+   margin: 0;
+   padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+
+   /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+   background-color: var(--main-black);
+   color: var(--main-white);
+   font-family: "PT Sans", sans-serif;
+   font-size: 1.8rem; /* 18px */
+   font-weight: 400;
+   line-height: 1.4;
+}
+
+h1,
+h2 {
+   font-family: "Lalezar", cursive;
+   text-align: center;
+}
+
+h1 {
+   font-size: 5rem;
+}
+
+h2 {
+   color: var(--main-green);
+   font-size: 4.5rem;
+}
+
+ul {
+   list-style: none;
+}
+
+a {
+   color: var(--main-white);
+   text-decoration: none;
+}
+
+img {
+   display: block;
+   width: 100%;
+}
+
+/* Header */
+.nav {
+   position: fixed;
+   background: var(--main-gray);
+   display: flex;
+   justify-content: space-between;
+   top: 0;
+   left: 0;
+   width: 100%;
+   box-shadow: 0 2px 0 rgba(0, 255, 0, 0.9);
+   z-index: 10;
+}
+
+.nav .logo {
+   width: 7rem;
+   margin-left: 7rem;
+}
+
+.nav-list {
+   display: flex;
+   margin-right: 3.5rem;
+}
+
+.nav-list a {
+   background: var(--main-green);
+   color: var(--main-black);
+   display: block;
+   font-size: 2rem;
+   font-weight: bold;
+   padding: 2.1rem;
+   border-right: 2px solid var(--main-black);
+   transition: all 0.3s ease-in-out;
+}
+
+.nav-list li:first-child {
+   border-left: 2px solid var(--main-black);
+}
+
+.nav-list a:hover {
+   background: var(--main-black);
+   color: var(--main-green);
+}
+
+/* Welcome section */
+.welcome-section {
+   background-color: var(--main-black);
+   background-image: linear-gradient(92deg, #000 0%, #333 100%);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   perspective: 500px;
+}
+
+.welcome-section > p {
+   font-size: 2.5rem;
+   text-align: center;
+   padding: 0 5rem;
+}
+
+.welcome-section div {
+   padding: 10rem 0;
+   will-change: transform;
+}
+
+#ui {
+   transform-style: preserve-3d;
+}
+
+#ui .text {
+   position: absolute;
+   color: var(--main-white);
+   font-family: "Lalezar", cursive;
+   font-size: 15rem;
+   line-height: 15rem;
+   padding: 20px 0;
+   mix-blend-mode: screen;
+   transform-style: preserve-3d;
+}
+
+#ui .text:nth-child(1) {
+   clip-path: polygon(-30% 0, -20% 0, 20% 100%, 0% 100%);
+   animation: wave 2000ms -10000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(2) {
+   clip-path: polygon(-25% 0, -15% 0, 25% 100%, 5% 100%);
+   animation: wave 2000ms -9800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(3) {
+   clip-path: polygon(-20% 0, -10% 0, 30% 100%, 10% 100%);
+   animation: wave 2000ms -9600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(4) {
+   clip-path: polygon(-15% 0, -5% 0, 35% 100%, 15% 100%);
+   animation: wave 2000ms -9400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(5) {
+   clip-path: polygon(-10% 0, 0% 0, 40% 100%, 20% 100%);
+   animation: wave 2000ms -9200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(6) {
+   clip-path: polygon(-5% 0, 5% 0, 45% 100%, 25% 100%);
+   animation: wave 2000ms -9000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(7) {
+   clip-path: polygon(0% 0, 10% 0, 50% 100%, 30% 100%);
+   animation: wave 2000ms -8800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(8) {
+   clip-path: polygon(5% 0, 15% 0, 55% 100%, 35% 100%);
+   animation: wave 2000ms -8600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(9) {
+   clip-path: polygon(10% 0, 20% 0, 60% 100%, 40% 100%);
+   animation: wave 2000ms -8400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(10) {
+   clip-path: polygon(15% 0, 25% 0, 65% 100%, 45% 100%);
+   animation: wave 2000ms -8200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(11) {
+   clip-path: polygon(20% 0, 30% 0, 70% 100%, 50% 100%);
+   animation: wave 2000ms -8000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(12) {
+   clip-path: polygon(25% 0, 35% 0, 75% 100%, 55% 100%);
+   animation: wave 2000ms -7800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(13) {
+   clip-path: polygon(30% 0, 40% 0, 80% 100%, 60% 100%);
+   animation: wave 2000ms -7600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(14) {
+   clip-path: polygon(35% 0, 45% 0, 85% 100%, 65% 100%);
+   animation: wave 2000ms -7400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(15) {
+   clip-path: polygon(40% 0, 50% 0, 90% 100%, 70% 100%);
+   animation: wave 2000ms -7200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(16) {
+   clip-path: polygon(45% 0, 55% 0, 95% 100%, 75% 100%);
+   animation: wave 2000ms -7000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(17) {
+   clip-path: polygon(50% 0, 60% 0, 100% 100%, 80% 100%);
+   animation: wave 2000ms -6800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(18) {
+   clip-path: polygon(55% 0, 65% 0, 105% 100%, 85% 100%);
+   animation: wave 2000ms -6600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(19) {
+   clip-path: polygon(60% 0, 70% 0, 110% 100%, 90% 100%);
+   animation: wave 2000ms -6400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(20) {
+   clip-path: polygon(65% 0, 75% 0, 115% 100%, 95% 100%);
+   animation: wave 2000ms -6200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(21) {
+   clip-path: polygon(70% 0, 80% 0, 120% 100%, 100% 100%);
+   animation: wave 2000ms -6000ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(22) {
+   clip-path: polygon(75% 0, 85% 0, 125% 100%, 105% 100%);
+   animation: wave 2000ms -5800ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(23) {
+   clip-path: polygon(80% 0, 90% 0, 130% 100%, 110% 100%);
+   animation: wave 2000ms -5600ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(24) {
+   clip-path: polygon(85% 0, 95% 0, 135% 100%, 115% 100%);
+   animation: wave 2000ms -5400ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(25) {
+   clip-path: polygon(90% 0, 100% 0, 140% 100%, 120% 100%);
+   animation: wave 2000ms -5200ms ease-in-out infinite alternate;
+}
+
+#ui .text:nth-child(26) {
+   clip-path: polygon(95% 0, 105% 0, 145% 100%, 125% 100%);
+   animation: wave 2000ms -5000ms ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+   0% {
+      transform: translate(-50%, -50%) scale(0.9) rotateX(10deg) rotateY(10deg) rotateZ(0deg);
+      color: var(--main-red);
+   }
+   100% {
+      transform: translate(-50%, -50%) scale(1.1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      color: var(--main-green);
+   }
+}
+
+/* About section */
+.about-section {
+   background-color: var(--main-black);
+   background-image: linear-gradient(92deg, #333 0%, #000 100%);
+   text-align: center;
+   padding: 10rem 5rem;
+}
+
+.about-section p {
+   padding: 5rem 0;
+}
+
+.about-section .about-img {
+   width: 60rem;
+   margin: 0 auto;
+}
+
+/* Skills section */
+.skills-section {
+   background-color: var(--main-black);
+   background-image: linear-gradient(92deg, #000 0%, #333 100%);
+   padding: 10rem 5rem;
+}
+
+.skills-bar {
+   width: 50%;
+   margin: 0 auto;
+   padding-top: 5rem;
+}
+
+.bar {
+   background-color: var(--main-green);
+   color: var(--main-white);
+   font-size: 14px;
+   font-weight: bold;
+   padding: 2px;
+   margin-bottom: 20px;
+   text-shadow: 1px 1px 1px rgba(0, 255, 0, 0.5);
+}
+
+.bar::before {
+   content: attr(data-skill);
+   background-color: var(--main-black);
+   display: inline-block;
+   padding: 5px 0 5px 10px;
+   border-radius: inherit;
+   animation: load 3s 0s;
+}
+
+.bar.front::before {
+   background-color: #111;
+}
+
+.bar.back::before {
+   background-color: #333;
+}
+
+.bar.html::before {
+   width: calc(97% - 10px);
+}
+
+.bar.css::before {
+   width: calc(95% - 10px);
+}
+
+.bar.javascript::before {
+   width: calc(75% - 10px);
+}
+
+.bar.jquery::before {
+   width: calc(80% - 10px);
+}
+
+.bar.bootstrap::before {
+   width: calc(93% - 10px);
+}
+
+.bar.wordpress::before {
+   width: calc(90% - 10px);
+}
+
+.bar.php::before {
+   width: calc(86% - 10px);
+}
+
+.bar.mysql::before {
+   width: calc(83% - 10px);
+}
+
+@keyframes load {
+   from {
+      width: 0%;
+   }
+}
+
+/* Projects section */
+.projects-section {
+   background-color: var(--main-black);
+   background-image: linear-gradient(92deg, #333 0%, #000 100%);
+   text-align: center;
+   padding: 10rem 5rem;
+}
+
+.projects-section-header {
+   max-width: 640px;
+   margin: 0 auto 5rem auto;
+}
+
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+   grid-gap: 5rem;
+   width: 100%;
+   max-width: 1280px;
+   margin: 0 auto;
+   margin-bottom: 5rem;
+}
+
+.project {
+   background: var(--main-gray);
+   box-shadow: 1px 5px 15px rgba(0, 255, 0, 0.9);
+   border-radius: 1px;
+}
+
+.code {
+   color: var(--main-green);
+   transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+   color: var(--main-black);
+}
+
+.project-image {
+   height: calc(100% - 6.8rem);
+   width: 100%;
+   object-fit: cover;
+}
+
+.project-title {
+   color: var(--main-green);
+   font-size: 2rem;
+   padding: 2rem 0.5rem;
+}
+
+.btn {
+   display: inline-block;
+   padding: 1rem 2rem;
+   border-radius: 1px;
+}
+
+.btn-show-all {
+   background: var(--main-green);
+   color: var(--main-black);
+   font-size: 2rem;
+   transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+   background: var(--main-gray);
+   color: var(--main-green);
+}
+
+.btn-show-all > i {
+   margin-left: 10px;
+   transform: translateX(0);
+   transition: transform 0.3s ease-out;
+}
+
+.btn-show-all:hover > i {
+   transform: translateX(5px);
+}
+
+/* Contact section */
+.contact-section {
+   background-color: var(--main-black);
+   background-image: linear-gradient(92deg, #000 0%, #333 100%);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   width: 100%;
+   height: 80vh;
+   padding: 0 2rem;
+}
+
+.contact-section-header > h2 {
+   font-size: 4.7rem;
+}
+
+.contact-section-header > p {
+   font-style: italic;
+}
+
+.contact-links {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   max-width: 980px;
+   margin-top: 5rem;
+   flex-wrap: wrap;
+}
+
+.contact-details {
+   color: var(--main-green);
+   font-size: 2.4rem;
+   text-shadow: 2px 2px 1px #5f5f5f;
+   border: 2px solid var(--main-green);
+   margin: 0 5px;
+   transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+   transform: translateY(10px);
+}
+
+/* Footer */
+footer {
+   background: var(--main-gray);
+   font-weight: 300;
+   display: flex;
+   justify-content: space-evenly;
+   padding: 2rem;
+   border-top: 2px solid var(--main-green);
+}
+
+footer > p {
+   margin: 1rem;
+}
+
+footer i {
+   vertical-align: middle;
+}
+
+footer a {
+   font-family: "Lalezar", cursive;
+   transition: 0.3s ease-in-out;
+}
+
+footer a:hover {
+   color: var(--main-green);
+}
+
+/* 
+   A few media query to set some font sizes at different screen sizes.
+   * This helps automate a bit of responsiveness.
+   * The trick is to use the rem unit for size values, margin and padding.
+   * Because rem is relative to the document font size
+   * when we scale up or down the font size on the document
+   * It will affect all properties using rem units for the values.
+*/
+
+/* 
+   I am using the em unit for breakpoints
+   * The calculation is the following
+   * screen size divided by browser base font size
+   * As an example: a breakpoint at 980px
+   * 980px / 16px = 61.25em
+*/
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+   html {
+      font-size: 60%;
+   }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+   html {
+      font-size: 58%;
+   }
+
+   .nav {
+      justify-content: center;
+   }
+
+   .nav .logo {
+      margin-left: 0.5rem;
+   }
+
+   .nav-list {
+      margin: 0 3rem;
+   }
+
+   .nav-list a {
+      font-size: 1.9rem;
+      padding: 2.2rem 0.5rem;
+   }
+
+   #ui .text {
+      font-size: 10rem;
+   }
+
+   .about-section .about-img {
+      width: 30rem;
+   }
+
+   .skills-bar {
+      width: 100%;
+   }
+
+   .contact-links {
+      flex-direction: column;
+      width: 50%;
+   }
+
+   .contact-details {
+      margin: 10px 0;
+   }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+   html {
+      font-size: 55%;
+   }
+
+   .projects-section-header {
+      font-size: 4rem;
+   }
+
+   .projects-section {
+      padding: 6rem 1rem;
+   }
+
+   .projects-grid {
+      grid-template-columns: 1fr;
+   }
+
+   .contact-section-header > h2 {
+      font-size: 4rem;
+   }
+
+   footer {
+      flex-direction: column;
+      text-align: center;
+   }
+}
